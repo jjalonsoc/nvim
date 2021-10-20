@@ -9,6 +9,7 @@ This is my configuration for NeoVim. It is supposed to be fast and easy to under
 - [ ] Debugging in python
 - [ ] My own whichkey config
 - [X] cmp to show all properties and not just text
+- [ ] better organization of the config
 
 ### Plugins:
 - [ ] Make list of installed plugins
@@ -17,7 +18,7 @@ This is my configuration for NeoVim. It is supposed to be fast and easy to under
 - [ ] Dap
 - [x] Dashboard
 - [x] git signs
-- [ ] indent blank line
+- [x] indent blank line
 - [ ] comments
 - [x] hop
 - [ ] terraform
