@@ -36,6 +36,12 @@ return require('packer').startup(function()
   use {'hrsh7th/cmp-vsnip'}
   use {'hrsh7th/vim-vsnip'}
   use {'onsails/lspkind-nvim'}
-
   use {'glepnir/dashboard-nvim'}
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
+    -- tag = 'release' -- To use the latest release
+  }
 end)

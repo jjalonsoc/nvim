@@ -16,7 +16,7 @@ This is my configuration for NeoVim. It is supposed to be fast and easy to under
 ### To install 
 - [ ] Dap
 - [x] Dashboard
-- [ ] git signs
+- [x] git signs
 - [ ] indent blank line
 - [ ] comments
 - [ ] hop

@@ -11,5 +11,6 @@ require('whichkey-config')
 require('telescope-config')
 require('lsp')
 require('dashboard-config')
+require('gitsigns-config')
 vim.cmd('colorscheme nord')
 
