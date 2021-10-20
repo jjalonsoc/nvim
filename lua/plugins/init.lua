@@ -73,4 +73,12 @@ return require('packer').startup(function()
       vim.g.indent_blankline_show_first_indent_level = true
     end,
   }
+  use {
+    "hashivim/vim-terraform",
+    event = "BufRead",
+    setup = function()
+      vim.cmd("let g:terraform_align=1")
+      vim.cmd("let g:terraform_fmt_on_save=1")
+    end,
+  }
 end)

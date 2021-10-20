@@ -21,6 +21,6 @@ This is my configuration for NeoVim. It is supposed to be fast and easy to under
 - [x] indent blank line
 - [ ] comments
 - [x] hop
-- [ ] terraform
+- [x] terraform
 - [ ] Vimwiki??
 - [ ] vim-easy-align?
