@@ -42,12 +42,17 @@ return require('packer').startup(function()
     requires = {
       'nvim-lua/plenary.nvim'
     },
-   use {
-      "phaazon/hop.nvim",
-      event = "BufRead",
-      setup = function()
-        vim.cmd("nnoremap s :HopChar2<CR>")
-      end,
-    }
+  }
+  use {
+    "phaazon/hop.nvim",
+    event = "BufRead",
+    setup = function()
+      vim.cmd("nnoremap s :HopChar2<CR>")
+    end,
+  }
+  use {
+    "terrortylor/nvim-comment",
+    event = "BufRead",
+    -- cmd = "CommentToggle",
   }
 end)
