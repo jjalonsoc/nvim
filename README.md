@@ -15,10 +15,11 @@ This is my configuration for NeoVim. It is supposed to be fast and easy to under
 
 ### To install 
 - [ ] Dap
-- [ ] Dashboard
+- [x] Dashboard
 - [ ] git signs
 - [ ] indent blank line
 - [ ] comments
 - [ ] hop
 - [ ] terraform
-- [ ] Vimwiki
+- [ ] Vimwiki??
+- [ ] vim-easy-align?

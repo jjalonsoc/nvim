@@ -37,4 +37,5 @@ return require('packer').startup(function()
   use {'hrsh7th/vim-vsnip'}
   use {'onsails/lspkind-nvim'}
 
+  use {'glepnir/dashboard-nvim'}
 end)

@@ -1,12 +1,13 @@
 
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local lspconfig = require('lspconfig')
 
 -----------------------------------------------------------
 -- HTML
 -----------------------------------------------------------
 
-require('lspconfig').html.setup {
+lspconfig.html.setup {
   capabilities = capabilities,
 }
 
@@ -16,7 +17,7 @@ require('lspconfig').html.setup {
 -----------------------------------------------------------
 
 
-require('lspconfig').tsserver.setup {
+lspconfig.tsserver.setup {
   capabilities = capabilities,
 }
 
@@ -24,8 +25,30 @@ require('lspconfig').tsserver.setup {
 -- PYTHON
 -----------------------------------------------------------
 
-require('lspconfig').pylsp.setup {
-  capabilities = capabilities,
+
+lspconfig.pyright.setup {
+  cmd = { "pyright-langserver", "--stdio" },
+  filetypes = { "python" },
+  root_dir = function(fname)
+        local root_files = {
+          'pyproject.toml',
+          'setup.py',
+          'setup.cfg',
+          'requirements.txt',
+          'Pipfile',
+          'pyrightconfig.json',
+        }
+        return lspconfig.util.root_pattern(unpack(root_files))(fname) or lspconfig.util.find_git_ancestor(fname) or lspconfig.util.path.dirname(fname)
+      end,
+  settings = {
+    python = {
+      analysis = {
+        autoSearchPaths = true,
+        diagnosticMode = "workspace",
+        useLibraryCodeForTypes = true
+      }
+    }
+  }
 }
 -----------------------------------------------------------
 -- LUA
@@ -49,7 +72,7 @@ local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
-require'lspconfig'.sumneko_lua.setup {
+lspconfig.sumneko_lua.setup {
   cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
   settings = {
     Lua = {

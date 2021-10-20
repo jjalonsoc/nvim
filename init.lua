@@ -10,5 +10,6 @@ require('autopairs-config')
 require('whichkey-config')
 require('telescope-config')
 require('lsp')
+require('dashboard-config')
 vim.cmd('colorscheme nord')
 
