@@ -50,11 +50,8 @@ return require('packer').startup(function()
       vim.cmd("nnoremap s :HopChar2<CR>")
     end,
   }
-  use {
-    "terrortylor/nvim-comment",
-    event = "BufRead",
+  use "terrortylor/nvim-comment"
     -- cmd = "CommentToggle",
-  }
   use {
     "lukas-reineke/indent-blankline.nvim",
     event = "BufRead",
