@@ -42,6 +42,12 @@ return require('packer').startup(function()
     requires = {
       'nvim-lua/plenary.nvim'
     },
-    -- tag = 'release' -- To use the latest release
+   use {
+      "phaazon/hop.nvim",
+      event = "BufRead",
+      setup = function()
+        vim.cmd("nnoremap s :HopChar2<CR>")
+      end,
+    }
   }
 end)

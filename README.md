@@ -19,7 +19,7 @@ This is my configuration for NeoVim. It is supposed to be fast and easy to under
 - [x] git signs
 - [ ] indent blank line
 - [ ] comments
-- [ ] hop
+- [x] hop
 - [ ] terraform
 - [ ] Vimwiki??
 - [ ] vim-easy-align?
