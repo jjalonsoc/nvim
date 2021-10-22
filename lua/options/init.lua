@@ -3,6 +3,7 @@
 --
 
 vim.cmd('filetype plugin indent on')
+vim.cmd('set iskeyword+=-')
 vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.hidden = true
 vim.o.whichwrap = 'b,s,<,>,[,],h,l'
@@ -13,7 +14,7 @@ vim.o.cmdheight = 2
 -- when horizontal split, the cursor is in the down screen if true
 vim.o.splitbelow = true
 -- when vertical split, the cursor is in the right screen if true
-vim.o.splitright = false
+vim.o.splitright = true
 -- if posible, use all the colors for terminal
 vim.opt.termguicolors = true
 vim.o.conceallevel = 0

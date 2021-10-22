@@ -1,18 +1,24 @@
-## ReadMe
+# ReadMe
+
 
 This is my configuration for NeoVim. It is supposed to be fast and easy to understand.
-
-### Todo:
+# TODO:
+## Design and milestones:
+### Readme file & organization of the repo (CLEAR CONFIG):
 - [ ] Description of the configuration and installation
-- [ ] Investigate how to use only the minimum necessary plugins.
-- [ ] Writing text/essays support.
-- [ ] Debugging in python
-- [ ] My own whichkey config
-- [X] cmp to show all properties and not just text
 - [ ] better organization of the config
 
-### Plugins:
+### Wished features:
+- [ ] Debugging in python
+- [ ] Investigate packer and load in an efficient way.
+- [ ] Writing text/essays support.
 - [ ] Make list of installed plugins
+
+## Clear steps in plugins:
+
+### Lua:
+- [ ] How does that M function works.
+- [ ] What does really on_attach do?
 
 ### To install 
 - [ ] Dap
@@ -24,3 +30,14 @@ This is my configuration for NeoVim. It is supposed to be fast and easy to under
 - [x] terraform
 - [ ] Vimwiki??
 - [ ] vim-easy-align?
+
+### Improvements
+- [ ] Whichkey: Better config.
+- [X] cmp:to show all properties and not just text
+- [ ] Lsp: real understanding of how it works
+- [ ] Nvim-tree: toggle should open either on the current file or in the main folder.
+- [ ] Nvim-tree: command :bd to buffer delete, doesnt work if the toggle is open. it closes everything.
+
+## Neovim could do:
+- [ ] Brackets and braces: I want to be able to colapse them and to move outside them better.
+- [ ] Markers
