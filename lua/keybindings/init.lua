@@ -2,10 +2,6 @@
 -----------------------------------------
 -- KEYBINDINGS
 -----------------------------------------
-vim.g.mapleader = ' '
------------------------------------------
--- 
------------------------------------------
 -- better window movement
 vim.api.nvim_set_keymap("n", "<C-h>", "<C-w>h", { silent = true })
 vim.api.nvim_set_keymap("n", "<C-j>", "<C-w>j", { silent = true })
