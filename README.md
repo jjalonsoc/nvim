@@ -12,7 +12,9 @@ This is my configuration for NeoVim. It is supposed to be fast and easy to under
 - [ ] Debugging in python
 - [ ] Investigate packer and load in an efficient way.
 - [ ] Writing text/essays support.
+- [ ] Notes integrated
 - [ ] Make list of installed plugins
+- [ ] maybe wttr.in in the lualine
 
 ## Clear steps in plugins:
 
