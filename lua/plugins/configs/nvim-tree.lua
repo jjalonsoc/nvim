@@ -1,8 +1,6 @@
 vim.g.nvim_tree_gitignore = 0 --Uses gitignore files to ignore
-vim.g.nvim_tree_ignore = {".git", ".cache", ".github"} --My own ignore
 vim.g.nvim_tree_quit_on_open = 0
 vim.g.nvim_tree_indent_markers = 1 --Highlights the cursor when tree is being used
-vim.g.nvim_tree_hide_dotfiles = 0 -- Hides dot files
 vim.g.nvim_tree_git_hl = 1
 vim.g.nvim_tree_root_folder_modifier = ":t"
 vim.g.nvim_tree_allow_resize = 1 --allows resizing
@@ -38,6 +36,10 @@ require'nvim-tree'.setup {
   system_open = {
     cmd  = nil,
     args = {}
+  },
+  filters = {
+    dotfiles = false,
+    custom = {".git", ".cache", ".github"}
   },
   view = {
     width = 30,
