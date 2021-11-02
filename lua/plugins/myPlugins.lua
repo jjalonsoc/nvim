@@ -79,4 +79,5 @@ return require('packer').startup(function()
       vim.cmd("let g:terraform_fmt_on_save=1")
     end,
   }
+  use {'Mofiqul/vscode.nvim'}
 end)

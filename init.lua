@@ -1,7 +1,5 @@
 vim.g.mapleader = ' '
 require('plugins')
-require('options')
-require('keybindings')
+require('settings')
+require('keymappings')
 require('lsp')
-vim.cmd('colorscheme nord')
-
