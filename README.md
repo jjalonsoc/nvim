@@ -20,7 +20,7 @@ This is my configuration for NeoVim. It is supposed to be fast and easy to under
 
 ### Lua:
 - [ ] How does that M function works.
-- [ ] What does really on_attach do?
+- [x] What does really on_attach do?
 
 ### To install 
 - [ ] Dap
@@ -39,6 +39,7 @@ This is my configuration for NeoVim. It is supposed to be fast and easy to under
 - [ ] Lsp: real understanding of how it works
 - [ ] Nvim-tree: toggle should open either on the current file or in the main folder.
 - [ ] Nvim-tree: command :bd to buffer delete, doesnt work if the toggle is open. it closes everything.
+- [ ] LSP Python really working.
 
 ## Neovim could do:
 - [ ] Brackets and braces: I want to be able to colapse them and to move outside them better.

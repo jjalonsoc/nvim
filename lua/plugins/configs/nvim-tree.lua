@@ -1,4 +1,4 @@
-vim.g.nvim_tree_gitignore = 0 --Uses gitignore files to ignore
+-- vim.g.nvim_tree_gitignore = 0 --Uses gitignore files to ignore
 vim.g.nvim_tree_quit_on_open = 0
 vim.g.nvim_tree_indent_markers = 1 --Highlights the cursor when tree is being used
 vim.g.nvim_tree_git_hl = 1
@@ -20,7 +20,6 @@ require'nvim-tree'.setup {
   hijack_cursor       = true,
   update_cwd          = false,
   diagnostics         = {
-    enable = true,
     icons = {
       hint = "",
       info = "",
