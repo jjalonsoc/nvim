@@ -1,7 +1,18 @@
 # ReadMe
 
+This repository hosts my Nvim configuration for my Ubuntu system. Description of the repo, where the files are etc...
 
-This is my configuration for NeoVim. It is supposed to be fast and easy to understand.
+## Python development
+
+In order to make Pyright LSP work correctly, the environment name has to be accessible.
+```bash
+export PYENV_VERSION="bmw"
+```
+## Features
+## KeyMappings
+Table with most important key mappings.
+
+
 # TODO:
 ## Design and milestones:
 ### Readme file & organization of the repo (CLEAR CONFIG):
@@ -45,9 +56,3 @@ This is my configuration for NeoVim. It is supposed to be fast and easy to under
 - [ ] Brackets and braces: I want to be able to colapse them and to move outside them better.
 - [ ] Markers
 
-# Python development
-
-In order to make Pyright LSP work correctly, the environment name has to be accessible.
-```bash
-export PYENV_VERSION="bmw"
-```
