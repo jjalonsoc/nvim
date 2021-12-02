@@ -1,8 +1,21 @@
 
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 local lspconfig = require('lspconfig')
 
+local M = {}
+
+function M.show_line_diagnostics()
+  local opts = {
+    focusable = false,
+    close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+    border = 'rounded',
+    source = 'always',  -- show source in diagnostic popup window
+    prefix = ' '
+  }
+  vim.diagnostic.open_float(nil, opts)
+end
 
 -----------------------------------------------------------
 -- ON_ATTACH
@@ -37,7 +50,24 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
   buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+  --
+  vim.cmd([[
+    autocmd CursorHold <buffer> lua require('lsp.language_servers').show_line_diagnostics()
+  ]])
 
+-- The blow command will highlight the current variable and its usages in the buffer.
+  if client.resolved_capabilities.document_highlight then
+    vim.cmd([[
+      hi link LspReferenceRead Visual
+      hi link LspReferenceText Visual
+      hi link LspReferenceWrite Visual
+      augroup lsp_document_highlight
+        autocmd! * <buffer>
+        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+      augroup END
+    ]])
+  end
 end
 
 -----------------------------------------------------------
@@ -139,9 +169,5 @@ lspconfig.sumneko_lua.setup {
   },
 }
 
--- function ()
---   
--- end
--- function ()
---   
--- end
+return M
+

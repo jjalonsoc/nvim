@@ -19,7 +19,7 @@ This is my configuration for NeoVim. It is supposed to be fast and easy to under
 ## Clear steps in plugins:
 
 ### Lua:
-- [ ] How does that M function works.
+- [x] How does that M function works.
 - [x] What does really on_attach do?
 
 ### To install 
@@ -36,11 +36,18 @@ This is my configuration for NeoVim. It is supposed to be fast and easy to under
 ### Improvements
 - [ ] Whichkey: Better config.
 - [X] cmp:to show all properties and not just text
-- [ ] Lsp: real understanding of how it works
+- [x] Lsp: real understanding of how it works
 - [ ] Nvim-tree: toggle should open either on the current file or in the main folder.
 - [ ] Nvim-tree: command :bd to buffer delete, doesnt work if the toggle is open. it closes everything.
-- [ ] LSP Python really working.
+- [x] LSP Python really working.
 
 ## Neovim could do:
 - [ ] Brackets and braces: I want to be able to colapse them and to move outside them better.
 - [ ] Markers
+
+# Python development
+
+In order to make Pyright LSP work correctly, the environment name has to be accessible.
+```bash
+export PYENV_VERSION="bmw"
+```

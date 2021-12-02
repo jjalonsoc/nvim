@@ -15,3 +15,12 @@ end
 --     local hl = "LspDiagnosticsSign" .. type
 --     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = 10 })
 -- end
+
+
+-- global config for diagnostic
+vim.diagnostic.config({
+  underline = false,
+  virtual_text = false,
+  signs = true,
+  severity_sort = true,
+})
