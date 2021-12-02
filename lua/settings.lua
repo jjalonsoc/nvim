@@ -2,8 +2,8 @@
 -- :h Option
 --
 
-vim.cmd('colorscheme vscode')
 vim.g.vscode_style = "dark"
+vim.cmd('colorscheme vscode')
 vim.cmd('filetype plugin indent on')
 vim.cmd('set iskeyword+=-')
 vim.o.shortmess = vim.o.shortmess .. 'c'

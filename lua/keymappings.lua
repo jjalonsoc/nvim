@@ -31,6 +31,7 @@ vim.api.nvim_set_keymap('n', '<space>e', ':NvimTreeToggle<CR>', { noremap = true
 -----------------------------------------
 -- TELESCOPE
 -----------------------------------------
-vim.api.nvim_set_keymap("n", " r", ":Telescope grep_string<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", " r", ":Telescope grep_string<CR>", { noremap = true, silent = false })
 vim.api.nvim_set_keymap("n", "<Leader>f", ":Telescope find_files<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<CR>", ":noh<CR><CR>", { noremap = true, silent = true})
+
