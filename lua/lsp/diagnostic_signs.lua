@@ -1,11 +1,17 @@
--- local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
--- for type, icon in pairs(signs) do
---   local hl = "DiagnosticSign" .. type
---   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
--- end
-
-local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
+--------------------------------------------------------
+-- Neovim 0.6.0
+--------------------------------------------------------
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
-    local hl = "LspDiagnosticsSign" .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
+
+--------------------------------------------------------
+-- Neovim 0.5.x
+--------------------------------------------------------
+-- local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
+-- for type, icon in pairs(signs) do
+--     local hl = "LspDiagnosticsSign" .. type
+--     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = 10 })
+-- end
