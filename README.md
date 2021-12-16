@@ -1,4 +1,4 @@
-# ReadMe
+[#](#) ReadMe
 
 This repository hosts my Nvim configuration for my Ubuntu system. Description of the repo, where the files are etc...
 
@@ -23,9 +23,11 @@ Table with most important key mappings.
 - [ ] Debugging in python
 - [ ] Investigate packer and load in an efficient way.
 - [ ] Writing text/essays support.
-- [ ] Notes integrated
+- [x] Notes integrated
 - [ ] Make list of installed plugins
 - [ ] maybe wttr.in in the lualine
+- [ ] Pick errors, (not show all of them)
+- [ ] Linting integrated
 
 ## Clear steps in plugins:
 

@@ -1,6 +1,7 @@
 -- vim.g.nvim_tree_gitignore = 0 --Uses gitignore files to ignore
-vim.g.nvim_tree_quit_on_open = 0
-vim.g.nvim_tree_indent_markers = 1 --Highlights the cursor when tree is being used
+local actions = require "gitsigns.actions"
+-- vim.g.nvim_tree_quit_on_open = 0
+-- vim.g.nvim_tree_indent_markers = 1 --Highlights the cursor when tree is being used
 vim.g.nvim_tree_git_hl = 1
 vim.g.nvim_tree_root_folder_modifier = ":t"
 vim.g.nvim_tree_allow_resize = 1 --allows resizing
@@ -11,11 +12,11 @@ require'nvim-tree'.setup {
   hijack_netrw        = true,
   open_on_setup       = true,
   ignore_ft_on_setup  = {"startify", "dashboard"}, --in this list tree is not activated
-  update_to_buf_dir   = {
-    enable = true,
-    auto_open = true,
-  },
-  auto_close          = true,
+  --update_to_buf_dir   = {
+  --   enable = true,
+  --   auto_open = true,
+  -- },
+  -- auto_close          = true,
   open_on_tab         = false,
   hijack_cursor       = true,
   update_cwd          = false,
@@ -36,6 +37,10 @@ require'nvim-tree'.setup {
     cmd  = nil,
     args = {}
   },
+  git = {
+    enable = true,
+    ignore = true
+  },
   filters = {
     dotfiles = false,
     custom = {".git", ".cache", ".github"}
@@ -44,7 +49,7 @@ require'nvim-tree'.setup {
     width = 30,
     height = 30,
     side = 'left',
-    auto_resize = true,
+    -- auto_resize = true,
     mappings = {
       custom_only = false,
       list = {
@@ -52,6 +57,16 @@ require'nvim-tree'.setup {
         {key = "h", cb = tree_cb("close_node")},
         {key = "v", cb = tree_cb("vsplit")},
       }
+    }
+  },
+  actions = {
+    open_file = {
+      quit_on_open = false
+    },
+  },
+  renderer = {
+    indent_markers = {
+      enable = true,
     }
   }
 }

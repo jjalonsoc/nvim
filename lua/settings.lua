@@ -6,6 +6,11 @@ vim.g.vscode_style = "dark"
 vim.cmd('colorscheme vscode')
 vim.cmd('filetype plugin indent on')
 vim.cmd('set iskeyword+=-')
+vim.cmd [[
+  set nocompatible
+  filetype plugin on
+  syntax on
+]]
 vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.hidden = true
 vim.o.whichwrap = 'b,s,<,>,[,],h,l'
