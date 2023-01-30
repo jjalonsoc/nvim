@@ -1,73 +1,138 @@
--- vim.g.nvim_tree_gitignore = 0 --Uses gitignore files to ignore
-local actions = require "gitsigns.actions"
--- vim.g.nvim_tree_quit_on_open = 0
--- vim.g.nvim_tree_indent_markers = 1 --Highlights the cursor when tree is being used
-vim.g.nvim_tree_git_hl = 1
-vim.g.nvim_tree_root_folder_modifier = ":t"
-vim.g.nvim_tree_allow_resize = 1 --allows resizing
-vim.g.nvim_tree_auto_ignore_ft = { "startify", "dashboard" } --in this list tree is not activated
-local tree_cb = require'nvim-tree.config'.nvim_tree_callback
+
+-- vim.g.nvim_tree_git_hl = 1
+
+-- local status_ok, nvim_tree = pcall(require, "nvim-tree")
+-- if not status_ok then
+--   return
+-- end
+
+-- local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
+-- if not config_status_ok then
+--   return
+-- end
+--
+-- local tree_cb = nvim_tree_config.nvim_tree_callback
+
 require'nvim-tree'.setup {
   disable_netrw       = true, --netrw is the neovim file explorer
   hijack_netrw        = true,
   open_on_setup       = true,
-  ignore_ft_on_setup  = {"startify", "dashboard"}, --in this list tree is not activated
-  --update_to_buf_dir   = {
+  open_on_setup_file  = true,
+  -- ignore_ft_on_setup  = {"startify"}, --in this list tree is not activated
+  -- auto_close          = true,
+  -- open_on_tab         = false,
+  hijack_cursor       = true,
+  -- update_to_buf_dir   = {
   --   enable = true,
   --   auto_open = true,
   -- },
-  -- auto_close          = true,
-  open_on_tab         = false,
-  hijack_cursor       = true,
-  update_cwd          = false,
+  auto_reload_on_write = true,
   diagnostics         = {
+    enable = true,
     icons = {
       hint = "",
       info = "",
       warning = "",
       error = "",
-    }
+    },
   },
   update_focused_file = {
-    enable      = false,
-    update_cwd  = false,
-    ignore_list = {}
-  },
-  system_open = {
-    cmd  = nil,
-    args = {}
+    enable      = true,
+    update_root  = true,
+    ignore_list = {},
   },
   git = {
     enable = true,
-    ignore = true
-  },
-  filters = {
-    dotfiles = false,
-    custom = {".git", ".cache", ".github"}
+    ignore = true,
+    timeout = 400,
   },
   view = {
+    centralize_selection = true,
     width = 30,
-    height = 30,
+    -- height = 30,
+    hide_root_folder = false,
     side = 'left',
+    signcolumn = 'yes',
     -- auto_resize = true,
     mappings = {
       custom_only = false,
       list = {
-        {key = {"l", "<CR>", "o"}, cb = tree_cb("edit")},
-        {key = "h", cb = tree_cb("close_node")},
-        {key = "v", cb = tree_cb("vsplit")},
-      }
-    }
+        -- {key = {"l", "<CR>", "o"}, action= "edit"},
+        { key = { "<CR>", "o", "l"}, action = "edit", mode = "n" },
+        { key = "h", action = "close_node"},
+        { key = "v", action = "vsplit"},
+      },
+    },
+    float = {
+      enable = false
+    },
+    number = false,
+    relativenumber = false,
   },
+  -- disable_window_picker = 0,
+  -- show_icons = {
+  --   git = 1,
+  --   folders = 1,
+  --   files = 1,
+  --   folder_arrows = 1,
+  --   tree_width = 40,
+  -- },
+  -- system_open = {
+  --   cmd  = nil,
+  --   args = {}
+  -- },
+  -- filters = {
+  --   dotfiles = false,
+  --   custom = {".git", ".cache", ".github"},
+  --   exclude = {".envrc$", ".gitignore"}
+  -- },
   actions = {
     open_file = {
       quit_on_open = false
     },
   },
   renderer = {
-    indent_markers = {
-      enable = true,
-    }
+    -- indent_markers = {
+    --   enable = true,
+    -- }
+      -- indent_markers = {
+        icons = {
+          webdev_colors = true,
+          git_placement = "before",
+          -- padding = " ",
+          symlink_arrow = " ➛ ",
+          show = {
+            file = true,
+            folder = true,
+            folder_arrow = true,
+            git = true,
+          },
+          glyphs = {
+            default = "",
+            symlink = "",
+            bookmark = "",
+            folder = {
+              arrow_closed = "",
+              arrow_open = "",
+              default = "",
+              open = "",
+              empty = "",
+              empty_open = "",
+              symlink = "",
+              symlink_open = "",
+            },
+            git = {
+              unstaged = "✗",
+              staged = "✓",
+              unmerged = "",
+              renamed = "➜",
+              untracked = "★",
+              deleted = "",
+              ignored = "◌",
+            },
+          },
+        }
+      -- }
   }
 }
 
