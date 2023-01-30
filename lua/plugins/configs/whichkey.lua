@@ -13,7 +13,6 @@ local mappings = {
   ["e"] = "Explorer",
   ["f"] = "Find File",
   ["h"] = "No Highlight",
-  [";"] = "Dashboard",
   b = {
     name = "Buffers",
     j = { "<cmd>BufferPick<cr>", "jump to buffer" },
