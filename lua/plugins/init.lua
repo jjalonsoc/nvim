@@ -1,5 +1,5 @@
 -- First require the plugins
-require('plugins.myPlugins')
+require('plugins.packer')
 -- Second require the respective configurations
 require('plugins.configs.nvim-tree')
 require('plugins.configs.lualine')
