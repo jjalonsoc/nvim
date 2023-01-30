@@ -1,16 +1,3 @@
--- Any option could be searched with 
--- :h Option
---
-
-vim.g.vscode_style = "dark"
-vim.cmd('colorscheme vscode')
-vim.cmd('filetype plugin indent on')
-vim.cmd('set iskeyword+=-')
-vim.cmd [[
-  set nocompatible
-  filetype plugin on
-  syntax on
-]]
 vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.hidden = true
 vim.o.whichwrap = 'b,s,<,>,[,],h,l'
@@ -23,33 +10,43 @@ vim.o.splitbelow = true
 -- when vertical split, the cursor is in the right screen if true
 vim.o.splitright = true
 -- if posible, use all the colors for terminal
-vim.opt.termguicolors = true
 vim.o.conceallevel = 0
 vim.o.showtabline= 2
 -- shows mode in the console
 vim.o.showmode = false
 vim.o.backup = false
 vim.o.writebackup = false
-vim.o.updatetime = 300
 vim.o.timeoutlen = 100
 vim.o.clipboard = "unnamedplus"
--- highlight the search items
-vim.o.hlsearch = true
 -- ignore case for search
 vim.o.ignorecase = true
-vim.o.scrolloff = 3
-vim.o.sidescrolloff = 5
-vim.o.mouse = "a"
-vim.wo.wrap = false
-vim.wo.number = true
-vim.o.cursorline = true
-vim.wo.signcolumn = "yes"
-vim.o.tabstop = 2
-vim.bo.tabstop = 2
-vim.o.softtabstop = 2
-vim.o.shiftwidth = 2
-vim.bo.shiftwidth = 2
-vim.o.autoindent = true
-vim.bo.autoindent = true
-vim.o.expandtab = true
-vim.bo.expandtab = true
+vim.opt.cursorline = true
+vim.o.ls = 1
+vim.o.ch = 1
+
+-- from the primeagen
+vim.opt.nu = true
+vim.opt.relativenumber = true
+
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+
+vim.opt.smartindent = true
+
+vim.opt.wrap = false
+
+vim.opt.hlsearch = true -- highlight the search items
+vim.opt.incsearch = true -- highlight the incremental search items
+
+vim.opt.termguicolors = true -- good colors
+
+vim.opt.scrolloff = 8 -- scroll leeaves 8 lines before the end of the file
+
+vim.opt.signcolumn = "yes"
+vim.opt.updatetime = 50
+
+vim.opt.background = "dark"
+-- vim.cmd([[colorscheme tokyonight]])
+vim.cmd[[colorscheme vscode]]
