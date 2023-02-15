@@ -16,8 +16,8 @@
 require'nvim-tree'.setup {
   disable_netrw       = true, --netrw is the neovim file explorer
   hijack_netrw        = true,
-  open_on_setup       = true,
-  open_on_setup_file  = true,
+  -- open_on_setup       = true, --deprecated
+  -- open_on_setup_file  = true,
   -- ignore_ft_on_setup  = {"startify"}, --in this list tree is not activated
   -- auto_close          = true,
   -- open_on_tab         = false,
@@ -28,7 +28,7 @@ require'nvim-tree'.setup {
   -- },
   auto_reload_on_write = true,
   diagnostics         = {
-    enable = true,
+    enable = false,
     icons = {
       hint = "",
       info = "",

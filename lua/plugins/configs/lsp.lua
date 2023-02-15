@@ -1,4 +1,5 @@
 local lsp = require('lsp-zero')
+local lspconfig = require('lspconfig')
 lsp.preset('recommended')
 
 lsp.ensure_installed({
@@ -7,6 +8,31 @@ lsp.ensure_installed({
   'sumneko_lua',
   'rust_analyzer',
   'pyright'
+})
+
+lsp.configure('pyright', {
+  cmd = { "pyright-langserver", "--stdio" },
+  filetypes = { "python" },
+  root_dir = function(fname)
+        local root_files = {
+          'pyproject.toml',
+          'setup.py',
+          'setup.cfg',
+          'requirements.txt',
+          'Pipfile',
+          'pyrightconfig.json',
+        }
+        return lspconfig.util.root_pattern(unpack(root_files))(fname) or lspconfig.util.find_git_ancestor(fname) or lspconfig.util.path.dirname(fname)
+      end,
+  settings = {
+    python = {
+      analysis = {
+        autoSearchPaths = true,
+        diagnosticMode = "workspace",
+        useLibraryCodeForTypes = true
+      }
+    }
+  }
 })
 
 lsp.nvim_workspace({
