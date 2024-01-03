@@ -5,7 +5,7 @@ lsp.preset('recommended')
 lsp.ensure_installed({
   'tsserver',
   'eslint',
-  'sumneko_lua',
+  -- 'sumneko_lua',
   'rust_analyzer',
   'pyright'
 })
@@ -30,6 +30,19 @@ lsp.configure('pyright', {
         autoSearchPaths = true,
         diagnosticMode = "workspace",
         useLibraryCodeForTypes = true
+      }
+    }
+  }
+})
+
+lsp.configure('pylsp', {
+  settings = {
+    pylsp = {
+      plugins = {
+        pycodestyle = {
+          -- ignore = {'W391'},
+          maxLineLength = 120
+        }
       }
     }
   }

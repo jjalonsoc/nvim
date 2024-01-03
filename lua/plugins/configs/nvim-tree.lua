@@ -50,19 +50,19 @@ require'nvim-tree'.setup {
     centralize_selection = true,
     width = 30,
     -- height = 30,
-    hide_root_folder = false,
+    -- hide_root_folder = true,
     side = 'left',
     signcolumn = 'yes',
     -- auto_resize = true,
-    mappings = {
-      custom_only = false,
-      list = {
-        -- {key = {"l", "<CR>", "o"}, action= "edit"},
-        { key = { "<CR>", "o", "l"}, action = "edit", mode = "n" },
-        { key = "h", action = "close_node"},
-        { key = "v", action = "vsplit"},
-      },
-    },
+    -- mappings = {
+    --   custom_only = false,
+    --   list = {
+    --     -- {key = {"l", "<CR>", "o"}, action= "edit"},
+    --     { key = { "<CR>", "o", "l"}, action = "edit", mode = "n" },
+    --     { key = "h", action = "close_node"},
+    --     { key = "v", action = "vsplit"},
+    --   },
+    -- },
     float = {
       enable = false
     },
@@ -92,6 +92,7 @@ require'nvim-tree'.setup {
     },
   },
   renderer = {
+    root_folder_label = false,
     -- indent_markers = {
     --   enable = true,
     -- }

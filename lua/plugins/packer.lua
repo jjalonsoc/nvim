@@ -11,7 +11,7 @@ return require('packer').startup(function()
   use {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons', config = function() require'nvim-tree'.setup {} end }
   use {'windwp/nvim-autopairs'}
   use {'folke/which-key.nvim'}
-  use {'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
+  use {'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { {'nvim-lua/plenary.nvim'} } }
   use {'mhinz/vim-startify'}
   use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}, }
   use {'phaazon/hop.nvim', event = "VimEnter", config = [[require('plugins.configs.nvim-hop')]] }

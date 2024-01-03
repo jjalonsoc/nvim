@@ -9,6 +9,7 @@ require('telescope').setup {
           vertical = {mirror = false},
         },
         find_command = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
+        no_ignore = true,
         prompt_prefix = " ",
         selection_caret = " ",
         entry_prefix = "  ",
